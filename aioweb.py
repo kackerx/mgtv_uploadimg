@@ -22,14 +22,7 @@ async def upload_img(item):
 
 
 async def get_data(offset, count, queue):
-    async with aiomysql.create_pool(
-        host="27.102.102.96",
-        port=3306,
-        user="kacker_dy",
-        password="3rSPYXxRkcBtd5MD",
-        db="kingvstr_dy",
-        charset="utf8",
-    ) as pool:
+    async with aiomysql.create_pool(...) as pool:  # 数据库配置
         async with pool.acquire() as conn:
             async with conn.cursor() as corsur:
                 sql = (
